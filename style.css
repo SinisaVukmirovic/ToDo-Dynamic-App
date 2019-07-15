@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 4rem 0 4rem;
+    background-color: #333;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* ------------ container ------------ */
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: .5em;
+    width: 25rem;
+    margin: 0 auto;
+}
+
+/* ------------ header ------------ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1em 1em .5em;
+    height: 12rem;
+    background: url('https://picsum.photos/600/400');
+    background-size: cover;
+    border: 5px solid royalblue;
+    border-radius: 1.5rem 1.5rem 0 0;
+
+    position: relative;
+}
+
+.clear {
+    align-self: flex-start;
+    width : 1.5rem;
+    height: 1.5rem;  
+}
+    .clear::before {
+        content: 'Clear List';
+        padding: .25em .5em;
+        background: #eee;
+        color: cornflowerblue;
+        font-weight: bold;
+
+        position: absolute;
+        top: 3rem; right: -3.5rem;
+
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .4s .3s;
+    }
+    .clear:hover::before {
+        transform: scaleX(1);
+    }
+
+.clear i {
+    font-size: 1.5rem;
+    color: royalblue;
+    text-shadow: 1px 1px 5px #000, -1px -1px 5px #000;
+    transition: transform .4s;
+}
+
+.clear i:hover {
+    cursor: pointer;
+    transform: rotate(60deg);
+}
+
+#date {
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px #000, -2px -2px 5px #000;
+}
+
+/* ------------ content ------------ */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 20rem;
+    background-color: #eee;
+    padding: 1em 0 0;
+    border: 5px solid royalblue;
+    border-top: none;
+}
+
+.content ul.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+    padding: .25em .5em;
+}
+
+.item i.complete {
+    font-size: 20px;
+    margin-right: .5em;
+    padding-left:5px;
+}
+    .item i.complete:hover {
+        cursor: pointer;
+    }
+
+.fa-check-circle {
+    color:royalblue;
+}
+
+.item p.text {
+    font-size: 1.25rem;
+}
+
+.lineThrough {
+    text-decoration: line-through;
+    color : royalblue;
+}
+
+.item i.delete {
+    margin-left: auto;
+    padding: 0 .25em;
+    font-size: 1.25rem;
+    color: #333;
+}
+    .item i.delete:hover {
+        color:crimson;
+        cursor: pointer;
+    }
+
+/* ------------ add item ------------ */
+.add-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 1em;
+    padding: .5em;
+    border-top: 2px solid #ccc;
+}
+    .add-item i {
+        font-size: 2.5rem;
+        color: royalblue;
+        margin-right: .25em;
+    }
+
+.add-item input {
+    width: 100%;
+    font-size: 1.25rem;
+    padding: .5em;
+    background-color: transparent;
+    border: none;
+}
+    .add-item input::-webkit-input-placeholder {
+        color: royalblue;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.25rem;
+    }
+
+/* -------------- media queries -------------- */
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    html {
+        font-size: 12px;
+    }
+}
